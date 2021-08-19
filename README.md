@@ -1,2 +1,4 @@
 # etch-a-sketch
-Tutorial project for Odin Project course
+Odin Project tutorial task
+
+A simple low-res sketchpad using HTML+CSS+JS only.
