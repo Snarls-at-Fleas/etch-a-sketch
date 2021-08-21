@@ -9,8 +9,8 @@ h1 {
 }
 
 #sketchPad {
-    width: 640px;
-    height: 640px;
+    width: 650px;
+    height: 650px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -21,9 +21,10 @@ h1 {
 
 .cell {
     border-width: 0px;
-    height: 40px;
-    width: 40px;
+    height: 6.4px;
+    width: 6.4px;
     margin: 0px;
+    padding: 0px;
 }
 
 .filled {
