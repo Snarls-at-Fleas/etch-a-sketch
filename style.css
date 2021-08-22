@@ -2,6 +2,10 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    text-align: center;
+}
+
 .btn {
     display: flex;
     justify-content: center;
@@ -9,24 +13,13 @@ h1 {
 }
 
 #sketchPad {
-    width: 650px;
-    height: 650px;
+    width: 720px;
+    height: 720px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     border-style: double;
     border-width: 10px;
     margin: auto;
-}
-
-.cell {
-    border-width: 0px;
-    height: 6.4px;
-    width: 6.4px;
-    margin: 0px;
-    padding: 0px;
-}
-
-.filled {
-    background-color: black;
+    padding: 10px;
 }
