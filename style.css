@@ -2,14 +2,18 @@ h1 {
     text-align: center;
 }
 
-h2 {
-    text-align: center;
-}
-
-.btn {
+.workArea {
     display: flex;
     justify-content: center;
-    padding: 20px;
+}
+
+.controls {
+    padding: 25px;
+}
+
+#canvasSize {
+    font-size: x-large;
+    font-weight: bold;
 }
 
 #sketchPad {
@@ -20,6 +24,5 @@ h2 {
     flex-direction: row;
     border-style: double;
     border-width: 10px;
-    margin: auto;
     padding: 10px;
 }

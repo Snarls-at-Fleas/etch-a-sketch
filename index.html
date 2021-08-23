@@ -8,10 +8,23 @@
     </head>
     <body>
         <h1>Sketch Pad</h1>
-        <h2 id="canvasSize"></h2>
-        <div class="btn">
-            <button>New Canvas</button>
-        </div>
-        <div id="sketchPad"></div>
+        <div class="workArea">
+            <div class="controls">
+                <p id="canvasSize"></p>
+                <label for="size">Canvas size</label>
+                <input type="range" min="16" max="100" id="size" name="canvasSize">
+                <button id="canSize">Clear & Apply</button>
+                <form>
+                    <p>Draw type</p>
+                    <input type="radio" id="drawType1" name="drawType" value="pen" checked>
+                    <label for="drawType1">Pen (black color)</label>
+                    <input type="radio" id="drawType2" name="drawType" value="pencil">
+                    <label for="drawType1">Pencil (shades of gray)</label>
+                    <input type="radio" id="drawType3" name="drawType" value="rainbow">
+                    <label for="drawType1">Rainbow (random color)</label>
+                </form>
+            </div>
+            <div id="sketchPad"></div>
+        </div>    
     </body>
 </html>
