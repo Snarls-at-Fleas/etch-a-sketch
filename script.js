@@ -1,6 +1,5 @@
 function makeNewCanvas(canvSize) {
     let containter = document.getElementById('sketchPad');
-    console.log("On func call:", canvSize);
     while (containter.firstChild) {
         containter.removeChild(containter.lastChild);
     };
@@ -16,7 +15,7 @@ function makeNewCanvas(canvSize) {
         pixel.style.width = `${720/canvSize}px`;
         pixel.style.height = `${720/canvSize}px`;
     });
-    let canvasSizeHeader = document.querySelector('#canvasSize');
+    let canvasSizeHeader = document.querySelector('#currentCanvas');
     canvasSizeHeader.textContent = `Current canvas: ${canvSize}x${canvSize}`
 }
 
@@ -27,6 +26,7 @@ function fillRainbow(e) {
         let blueColor = Math.floor(Math.random()*255)
         e.target.style.backgroundColor = `rgb(${redColor}, ${greenColor}, ${blueColor})`;
         e.target.classList.toggle('filled');
+        e.target.id = "rainbow";
     }
 };
 
@@ -38,7 +38,8 @@ function fillBlack(e) {
 };
 
 function fillShadesOfGray(e) {
-    if (e.target.id !== 'sketchPad' && e.target.id < 100) {
+    if (e.target.id !== 'sketchPad' && e.target.id < 100 && 
+    e.target.style.backgroundColor !== "black" && e.target.id !== "rainbow") {
         let shadeValue = 90 - e.target.id;
         e.target.style.backgroundColor = `hsl(0, 0%, ${shadeValue}%)`;
         e.target.id = `${100 - shadeValue}`;
@@ -47,8 +48,21 @@ function fillShadesOfGray(e) {
 
 makeNewCanvas(16);
 
+let drawSelection = "pen";
+
 let cellHovered = document.querySelector('#sketchPad');
-cellHovered.addEventListener('mouseover', (e) => fillShadesOfGray(e));
+cellHovered.addEventListener('mouseover', (e) => {
+    switch (drawSelection) {
+        case "pen":
+            fillBlack(e);
+            break;
+        case "pencil":
+            fillShadesOfGray(e);
+            break;
+        case "rainbow":
+            fillRainbow(e);    
+    }
+});
 
 let btn = document.querySelector('button');
 btn.addEventListener('click', () => {
@@ -60,6 +74,17 @@ btn.addEventListener('click', () => {
             sizeCheck = false;
         }
     };
-    console.log("On click:", canvasSize);
     makeNewCanvas(canvasSize);
+})
+
+let drawChoice = document.getElementById("drawType");
+drawChoice.addEventListener('click', () => {
+    let choice = document.querySelectorAll('input[name="drawType"]');
+    if (choice[0].checked) {
+        drawSelection = "pen";
+    } else if (choice[1].checked) {
+        drawSelection = "pencil";
+    } else if (choice[2]) {
+        drawSelection = "rainbow";
+    }
 })
