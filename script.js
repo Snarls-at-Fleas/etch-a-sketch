@@ -16,7 +16,7 @@ function makeNewCanvas(canvSize) {
         pixel.style.height = `${720/canvSize}px`;
     });
     let canvasSizeHeader = document.querySelector('#currentCanvas');
-    canvasSizeHeader.textContent = `Current canvas: ${canvSize}x${canvSize}`
+    canvasSizeHeader.textContent = `Current canvas size: ${canvSize}x${canvSize}`
 }
 
 function fillRainbow(e) {

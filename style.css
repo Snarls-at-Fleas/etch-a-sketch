@@ -26,6 +26,13 @@ h1 {
     font-weight: bold;
 }
 
+#canSize {
+    padding: 10px;
+    border-radius: 14px;
+    font-size: medium;
+    font-weight: bold;
+}
+
 #drawType {
     list-style-type: none;
     padding: 0;
